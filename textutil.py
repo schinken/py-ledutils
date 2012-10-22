@@ -28,9 +28,7 @@ class DrawText:
         
         frame = {}
         for x in xrange(self.board_width):
-            frame[x] = {}
-            for y in xrange(self.board_height):
-                frame[x][y] = self.image_xy[x+num][y]
+            frame[x] = self.image_xy[x+num]
 
         return frame
 
