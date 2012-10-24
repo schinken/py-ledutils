@@ -33,7 +33,7 @@ class Client:
 
     def set_priority(self, priority):
 
-        if not priority is self.PRIO_NORMAL or not priority is self.PRIO_HIGH or not priority is self.PRIO_GOD:
+        if priority != self.PRIO_NORMAL and priority != self.PRIO_HIGH and priority != self.PRIO_GOD:
             return
 
         self.write_byte(self.CMD_PRIO)
