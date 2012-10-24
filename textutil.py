@@ -22,7 +22,7 @@ class DrawText:
         return self.image_xy
 
     def get_frame_count(self):
-        return self.banner_width-self.board_width+1
+        return self.banner_width-self.board_width
 
     def get_frame(self, num):
         
@@ -64,7 +64,7 @@ class DrawText:
         text_width, text_height = font.getsize(text)
 
         # calculate banner width for rotation
-        banner_width = text_width+self.board_width+pad_front
+        banner_width = text_width+(self.board_width*2)+pad_front
 
         im = Image.new(mode='RGB', size=(banner_width, self.board_height), color=(0,0,0))
         
