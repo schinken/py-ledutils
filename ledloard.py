@@ -31,6 +31,12 @@ class Client:
             sys.stderr.write("[ERROR] %s\n" % msg[1])
             sys.exit(2)
 
+    def disconnect(self):
+        self.socket.close()
+
+    def __exit__(self):
+        self.disconnect()
+
     def set_priority(self, priority):
 
         if priority != self.PRIO_NORMAL and priority != self.PRIO_HIGH and priority != self.PRIO_GOD:
